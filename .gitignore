@@ -1,0 +1,10 @@
+# Ignora executaveis e arquivos objeto
+bin/*
+obj/*
+*.out
+*.o
+
+# Ignora arquivos de sistema e de IDEs (opcional, mas recomendado)
+.DS_Store
+.vscode/
+.idea/
