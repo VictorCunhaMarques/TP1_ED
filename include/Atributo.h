@@ -4,13 +4,15 @@
 
 class Atributo {
 private:
+    static int contador_atributos;
     int id;
     std::string nome;
 
 public:
-    Atributo(int _id, const std::string& _nome);
+    Atributo(const std::string& _nome);
     int getId() const;
     const std::string& getNome() const;
+    static int getTotalAtributos();
 };
 
 
