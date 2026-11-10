@@ -18,6 +18,9 @@ public:
     void empilhar(int id_item);
     int desempilhar();
     bool vazia() const;
+    bool contem(int id_item) const;
+    int tamanho() const;
+    void obterItens(int* array_destino) const;
 };
 
 #endif

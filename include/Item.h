@@ -12,6 +12,7 @@ public:
     Item(const std::string& _nome);
     int getId() const;
     const std::string& getNome() const;
+    static int getTotalItens();
 };
 
 

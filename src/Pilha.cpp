@@ -13,14 +13,41 @@ void Pilha::empilhar(int id_item) {
 }
 int Pilha::desempilhar() {
     if(!vazia()) {
-        int idRetorno = topo->id_item;
+        int id_retorno = topo->id_item;
         No* noAux = topo;
 
         topo = topo->proximo;
         delete noAux;
 
-        return idRetorno;
+        return id_retorno;
     }
     return -1;
 }
 bool Pilha::vazia() const { return topo == nullptr; }
+bool Pilha::contem(int id_item) const {
+    No* aux = topo;
+    while (aux != nullptr) {
+        if (aux->id_item == id_item) {
+            return true;
+        }
+        aux = aux->proximo;
+    }
+    return false;
+}
+int Pilha::tamanho() const {
+    int count = 0;
+    No* aux = topo;
+    while (aux != nullptr) {
+        count++;
+        aux = aux->proximo;
+    }
+    return count;
+}
+void Pilha::obterItens(int* array_destino) const {
+    int idx = 0;
+    No* aux = topo;
+    while (aux != nullptr) {
+        array_destino[idx++] = aux->id_item;
+        aux = aux->proximo;
+    }
+}
